@@ -216,7 +216,7 @@
     
     function connectWs() {
         try {
-            ws = new WebSocket('wss://paintboard.luogu.me/api/paintboard/ws');
+            ws = new WebSocket('ws://112.124.63.88:32767/api/paintboard/ws');
             ws.binaryType = "arraybuffer";
             
             ws.onopen = function() {
@@ -395,7 +395,7 @@
     $('#reset-token').bind("click", function () {
         $.ajax({
             type: 'POST',
-            url: 'https://paintboard.luogu.me/api/auth/gettoken',
+            url: 'http://112.124.63.88:32767/api/auth/gettoken',
             data: JSON.stringify({
                 uid: parseInt(document.getElementById('uid').value),
                 access_key: document.getElementById('paste').value
@@ -497,7 +497,7 @@
     function initialPaint() {
         console.log(0)
         var oReq = new XMLHttpRequest();
-        oReq.open("GET", "https://paintboard.luogu.me/api/paintboard/getboard");
+        oReq.open("GET", "http://112.124.63.88:32767/api/paintboard/getboard");
         oReq.responseType = "arraybuffer";
 
         oReq.onload = function (oEvent) {
